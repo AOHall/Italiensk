@@ -50,11 +50,26 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Podcast</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>I denne episoden av Bicerin Podcast går vi gjennom litt forskjellig. </p>
-							<p>Prøv å følg godt med</p>
-							<p>Lytt og lær</p>
+							<h1>Kontakt oss</h1>
+							<form method="post" action="send_mail.php">
+							<p>
+							<label>Navn
+							<input type="text" name="name" required>
+							</label> 
+							</p>
+							<p>
+							<label>Email 
+							<input type="email" name="email">
+							</label>
+							</p>
+							<p>
+							<label>Melding
+							<textarea name="message" maxlength="500"></textarea>
+							</label>
+							</p>
+							<p><button>Send meldingen</button></p>
+							</form>
+
 						</div>
 					</div>
 
@@ -64,18 +79,10 @@
 							<section>
 								<div class="row">
 										<div class="col-6 col-12-medium">
-											<h2>Send e-mail to someone@example.com:</h2>
-
-											<form action="mailto:juve.andy@gmail.com" method="post" enctype="text/plain">
-											Name:<br>
-											<input type="text" name="name"><br>
-											E-mail:<br>
-											<input type="text" name="mail"><br>
-											Comment:<br>
-											<input type="text" name="comment" size="50"><br><br>
-											<input type="submit" value="Send">
-											<input type="reset" value="Reset">
-											</form>
+											<h3>Kontakt</h3>
+											<ul class="actions">
+												<li><a href="contact_form.html" class="button">Kontakt oss</a></li>
+											</ul>
 										</div>
 							</section>
 							<section>
@@ -102,3 +109,4 @@
 
 	</body>
 </html>
+
