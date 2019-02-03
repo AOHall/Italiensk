@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Lær italiensk med Bicerin </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="shortcut icon" href="images/B.ico">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Bicerin</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Meny</h2>
+						<ul>
+							<li><a href="index">Hjem</a></li>
+							<li><a href="sesong1">Podcaster | Sesong 1</a></li>
+							<li><a href="sesong2">Podcaster | Sesong 2</a></li>
+							<li><a href="gloser">Gloser</a></li>
+							<li><a href="tips">Tips og triks</a></li>
+							<li><a href="giuliavideoer">Lytt til Giulia</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<section>
+								<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Quiz</title>
+<style>
+div#test{ border:#5AB029 3px solid; padding:10px 40px 40px 40px; background-color:#E5FCE3; width:50%;}
+</style>
+<script type="text/javascript">
+// pos is position of where the user in the test or which question they're up to
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+// this is a multidimensional array with 4 inner array elements with 5 elements inside them
+// if you don't want answers viewable in the code, then you should use PHP and mySQL database
+var questions = [
+  ["What is 36 + 42", "64", "78", "76", "B"],
+  ["What is 7 x 4?", "21", "27", "28", "C"],
+  ["What is 16 / 4?", "4", "6", "3", "A"],
+  ["What is 8 x 12?", "88", "112", "96", "C"]
+  ];
+// this get function is short for the getElementById function  
+function get(x){
+  return document.getElementById(x);
+}
+function renderQuestion(){
+  test = get("test");
+  if(pos >= questions.length){
+    test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+    get("test_status").innerHTML = "Test completed";
+    // resets the variable to allow users to restart the test
+    pos = 0;
+    correct = 0;
+    // stops rest of renderQuestion function running when test is completed
+    return false;
+  }
+  get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+  question = questions[pos][0];
+  chA = questions[pos][1];
+  chB = questions[pos][2];
+  chC = questions[pos][3];
+  test.innerHTML = "<h3>"+question+"</h3>";
+  // the += appends to the data we started on the line above
+  test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+  test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+  test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+  test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+												
+}
+function checkAnswer(){
+  // use getElementsByName because we have an array which it will loop through
+  choices = document.getElementsByName("choices");
+  for(var i=0; i<choices.length; i++){
+    if(choices[i].checked){
+      choice = choices[i].value;
+    }
+  }
+  // checks if answer matches the correct choice
+  if(choice == questions[pos][4]){
+    //each time there is a correct answer this value increases
+    correct++;
+  }
+  // changes position of which character user is on
+  pos++;
+  // then the renderQuestion function runs again to go to next question
+  renderQuestion();
+}
+window.addEventListener("load", renderQuestion, false);
+</script>
+</head>
+<body>
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<div class="row">
+										<div class="col-6 col-12-medium">
+											<h3>Bicerin per tutti</h3>
+							</section>
+							<section>
+								<h3>Følg oss</h3>
+								<ul class="icons">
+									<li><a href="https://soundcloud.com/bicerinpodcast" class="icon style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+									<li><a href="https://www.youtube.com/user/e9950" class="icon style2 fa-youtube"><span class="label">YouTube</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Bicerin Podcast </li><li>En nettside laget og drevet av Andreas Olav Hallingstad. Design: <a href="http://html5up.net">HTML5 UP</a> Bilder fra Unsplash</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
